@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Addiction Breaker - Session</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="session-body">
+  <div class="app-frame session-frame">
+    <div class="ambient-bg">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+      <span class="blob blob-d"></span>
+    </div>
+
+    <main class="session-screen">
+      <header class="session-header">
+        <p class="session-overline">Stay Present</p>
+        <h1>Ride the urge</h1>
+      </header>
+
+      <section class="session-orbit-panel" aria-live="polite">
+        <div class="session-orbit">
+          <span class="session-wave session-wave-1" aria-hidden="true"></span>
+          <span class="session-wave session-wave-2" aria-hidden="true"></span>
+          <span class="session-wave session-wave-3" aria-hidden="true"></span>
+          <span class="session-wave session-wave-4" aria-hidden="true"></span>
+          <div class="session-orb">
+            <p class="session-orb-label">Hold</p>
+            <p id="timer-display" class="session-timer">3:00</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="session-card">
+        <p id="support-text" class="support-text session-support-text">You are safe. Let the urge pass through.</p>
+        <div class="support-actions">
+          <button id="music-btn" class="action-btn ghost-btn" type="button">Calming Music</button>
+          <button id="tips-btn" class="action-btn ghost-btn" type="button">Urge Tips</button>
+          <button id="meditation-btn" class="action-btn ghost-btn" type="button">Meditation</button>
+        </div>
+      </section>
+    </main>
+
+    <section id="result-overlay" class="overlay hidden">
+      <div class="overlay-card result-popup">
+        <p class="result-kicker">Check in</p>
+        <h2>How did it go?</h2>
+        <p>Choose the result below.</p>
+        <div class="overlay-actions">
+          <button id="win-btn" class="action-btn success-btn" type="button">I did it</button>
+          <button id="lose-btn" class="action-btn loss-btn" type="button">I slipped</button>
+        </div>
+      </div>
+    </section>
+
+    <nav id="session-nav" class="app-dock hidden" aria-label="Bottom navigation">
+      <a class="dock-link" href="index.html" aria-label="Home"><svg class="dock-icon-svg dock-home-icon" viewBox="0 0 44 44" aria-hidden="true"><path class="dock-home-roof" d="M12 22 L22 12 L32 22"></path><path class="dock-home-body" d="M16 21 V33 H28 V21"></path></svg></a>
+      <a class="dock-link" href="page2.html" aria-label="Info">
+        <svg class="dock-icon-svg" viewBox="0 0 44 44" aria-hidden="true">
+          <rect x="11" y="9" width="22" height="26" rx="4"></rect>
+          <line x1="22" y1="18" x2="22" y2="28"></line>
+          <line x1="22" y1="14.5" x2="22" y2="14.5"></line>
+        </svg>
+      </a>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
