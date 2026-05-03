@@ -2212,6 +2212,9 @@ h1 {
     padding: 0 18px 18px;
     display: grid;
     justify-items: center;
+    background: transparent;
+    box-shadow: none;
+    border: 0;
   }
 
   .cooldown-reflection-card {
@@ -2225,7 +2228,7 @@ h1 {
   }
 
   .cooldown-textarea {
-    min-height: 112px;
+    min-height: 84px;
     padding: 15px;
   }
 
@@ -2462,7 +2465,7 @@ h1 {
   }
 
   .cooldown-textarea {
-    min-height: 104px;
+    min-height: 78px;
     padding: 14px;
   }
 
