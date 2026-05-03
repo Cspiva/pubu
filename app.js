@@ -175,6 +175,7 @@ function initSessionPage() {
   let secondsRemaining = DEFAULT_TIMER_SECONDS;
   let expiryTime = null;
   let isReturningFromModal = false;
+  let shouldOpenOverlayImmediately = false;
 
   // Check if we're returning from tips or meditation
   const savedState = sessionStorage.getItem(SESSION_STATE_KEY);
@@ -188,9 +189,7 @@ function initSessionPage() {
       secondsRemaining = Math.max(0, Math.floor((expiryTime - currentTime) / 1000));
       isReturningFromModal = true;
       if (secondsRemaining <= 0) {
-        // Timer already expired while on tips/meditation page
-        showResultOverlay();
-        return;
+        shouldOpenOverlayImmediately = true;
       }
     } catch (_error) {
       // If parsing fails, use default
@@ -311,6 +310,13 @@ function initSessionPage() {
 
   bindResultAction(winBtn, recordWin);
   bindResultAction(loseBtn, recordLoss);
+
+  if (shouldOpenOverlayImmediately) {
+    timerDisplay.textContent = formatTime(0);
+    updateProgressRing(0);
+    showResultOverlay();
+    return;
+  }
 
   // Only reset to session state if not returning from tips/meditation
   if (!isReturningFromModal) {
