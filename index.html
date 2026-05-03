@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Addiction Breaker</title>
+  <link rel="stylesheet" href="styles.css?v=20260503f" />
+</head>
+<body class="home-body">
+  <div class="app-frame home-frame">
+    <main class="home-screen">
+      <h1 class="home-title">Getting an urge?</h1>
+
+      <section class="home-center">
+        <button id="urge-button" class="urge-button home-urge-button" type="button" aria-label="Start urge timer">
+          <span class="home-urge-shell" aria-hidden="true">
+            <span class="home-urge-halo"></span>
+            <span class="home-urge-core">
+              <span class="home-urge-label">press</span>
+            </span>
+          </span>
+        </button>
+      </section>
+    </main>
+
+    <nav class="app-dock" aria-label="Bottom navigation">
+      <a class="dock-link active" href="index.html" aria-current="page" aria-label="Home"><svg class="dock-icon-svg dock-home-icon" viewBox="0 0 44 44" aria-hidden="true"><path class="dock-home-roof" d="M12 22 L22 12 L32 22"></path><path class="dock-home-body" d="M16 21 V33 H28 V21"></path></svg></a>
+      <a class="dock-link" href="page2.html" aria-label="Info">
+        <svg class="dock-icon-svg" viewBox="0 0 44 44" aria-hidden="true">
+          <rect x="11" y="9" width="22" height="26" rx="4"></rect>
+          <line x1="22" y1="18" x2="22" y2="28"></line>
+          <line x1="22" y1="14.5" x2="22" y2="14.5"></line>
+        </svg>
+      </a>
+    </nav>
+  </div>
+
+  <script src="app.js?v=20260503f"></script>
+</body>
+</html>

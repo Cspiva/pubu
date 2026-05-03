@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Addiction Breaker - Reset</title>
+  <link rel="stylesheet" href="styles.css?v=20260503f" />
+</head>
+<body class="cooldown-body">
+  <div class="app-frame cooldown-frame">
+    <div class="ambient-bg ambient-bg-cool" aria-hidden="true">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+      <span class="blob blob-c"></span>
+      <span class="blob blob-d"></span>
+    </div>
+
+    <main class="cooldown-screen">
+      <header class="cooldown-header">
+        <p class="session-overline">Reset</p>
+        <h1>Pause here</h1>
+        <p class="cooldown-subtitle">Sit with it for a minute, then leave one honest note before moving on.</p>
+      </header>
+
+      <section class="session-orbit-panel cooldown-orbit-panel" aria-live="polite">
+        <div class="session-orbit">
+          <span class="session-wave session-wave-1 cooldown-wave cooldown-wave-1" aria-hidden="true"></span>
+          <span class="session-wave session-wave-2 cooldown-wave cooldown-wave-2" aria-hidden="true"></span>
+          <span class="session-wave session-wave-3 cooldown-wave cooldown-wave-3" aria-hidden="true"></span>
+          <svg class="session-progress-ring cooldown-progress-ring" viewBox="0 0 220 220" aria-hidden="true">
+            <circle class="session-progress-ring-track cooldown-progress-track" cx="110" cy="110" r="94"></circle>
+            <circle id="cooldown-progress-value" class="session-progress-ring-value cooldown-progress-value" cx="110" cy="110" r="94"></circle>
+          </svg>
+          <div class="session-orb cooldown-orb">
+            <p id="cooldown-timer" class="session-timer cooldown-timer sr-only">3:00</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="session-card cooldown-card">
+        <article class="cooldown-reflection-card">
+          <div class="tracker-chip cooldown-chip" aria-hidden="true"></div>
+          <p class="cooldown-label">Required reflection</p>
+          <label class="sr-only" for="cooldown-reflection">What triggered this slip?</label>
+          <textarea id="cooldown-reflection" class="cooldown-textarea" placeholder="What triggered this? What will you do differently next time?"></textarea>
+        </article>
+        <p id="cooldown-hint" class="cooldown-hint">The button unlocks when the timer ends and you leave a reflection.</p>
+        <button id="cooldown-exit" class="action-btn cooldown-exit-btn" type="button" disabled>
+          <span class="cooldown-exit-inner">Reset and continue</span>
+        </button>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js?v=20260503f"></script>
+</body>
+</html>

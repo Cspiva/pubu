@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Addiction Breaker - Info</title>
+  <link rel="stylesheet" href="styles.css?v=20260503f" />
+</head>
+<body class="info-body">
+  <div class="app-frame">
+    <main class="screen info-screen">
+      <header class="hero">
+        <p class="eyebrow">Your Progress</p>
+        <h1>Info</h1>
+        <p class="subtitle">Track your urge wins and learn from each attempt.</p>
+      </header>
+
+      <section class="card-grid info-card-grid">
+        <article class="card tracker-card tracker-card-peach">
+          <div class="tracker-chip" aria-hidden="true"></div>
+          <h2>Wins</h2>
+          <p id="stats-wins" class="big-stat">0</p>
+        </article>
+
+        <article class="card tracker-card tracker-card-blush">
+          <div class="tracker-chip" aria-hidden="true"></div>
+          <h2>Losses</h2>
+          <p id="stats-losses" class="big-stat">0</p>
+        </article>
+
+        <article class="card tracker-card tracker-card-sky">
+          <div class="tracker-chip" aria-hidden="true"></div>
+          <h2>Current streak</h2>
+          <p id="stats-streak" class="big-stat">0</p>
+        </article>
+
+        <article class="card tracker-card tracker-card-lilac">
+          <div class="tracker-chip" aria-hidden="true"></div>
+          <h2>Best streak</h2>
+          <p id="stats-best" class="big-stat">0</p>
+        </article>
+
+        <article class="card tracker-card tracker-card-mint">
+          <div class="tracker-chip" aria-hidden="true"></div>
+          <h2>Total urge-free time</h2>
+          <p id="stats-time" class="big-stat">0:00</p>
+        </article>
+      </section>
+    </main>
+
+    <nav class="app-dock" aria-label="Bottom navigation">
+      <a class="dock-link" href="index.html" aria-label="Home"><svg class="dock-icon-svg dock-home-icon" viewBox="0 0 44 44" aria-hidden="true"><path class="dock-home-roof" d="M12 22 L22 12 L32 22"></path><path class="dock-home-body" d="M16 21 V33 H28 V21"></path></svg></a>
+      <a class="dock-link active" href="page2.html" aria-current="page" aria-label="Info">
+        <svg class="dock-icon-svg" viewBox="0 0 44 44" aria-hidden="true">
+          <rect x="11" y="9" width="22" height="26" rx="4"></rect>
+          <line x1="22" y1="18" x2="22" y2="28"></line>
+          <line x1="22" y1="14.5" x2="22" y2="14.5"></line>
+        </svg>
+      </a>
+    </nav>
+  </div>
+
+  <script src="app.js?v=20260503f"></script>
+</body>
+</html>
