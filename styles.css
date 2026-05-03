@@ -2208,12 +2208,20 @@ h1 {
   }
 
   .cooldown-card {
+    margin-top: 44px;
     padding: 0 18px 18px;
+    display: grid;
+    justify-items: center;
   }
 
   .cooldown-reflection-card {
+    width: 100%;
     border-radius: 22px;
     padding: 17px 17px 18px;
+  }
+
+  .cooldown-hint {
+    display: none;
   }
 
   .cooldown-textarea {
@@ -2222,11 +2230,16 @@ h1 {
   }
 
   .cooldown-exit-btn {
-    padding: 7px;
+    width: auto;
+    margin-top: 14px;
+    padding: 4px;
+    border-radius: 999px;
   }
 
   .cooldown-exit-inner {
-    min-height: 50px;
+    min-height: 42px;
+    padding: 0 18px;
+    white-space: nowrap;
   }
 
   #support-text.session-support-text {
@@ -2424,6 +2437,10 @@ h1 {
     padding-bottom: 0;
   }
 
+  .cooldown-card {
+    margin-top: 38px;
+  }
+
   .cooldown-orbit-panel {
     margin-top: 112px;
   }
@@ -2447,6 +2464,11 @@ h1 {
   .cooldown-textarea {
     min-height: 104px;
     padding: 14px;
+  }
+
+  .cooldown-exit-inner {
+    min-height: 40px;
+    padding: 0 16px;
   }
 
   .support-story-card,
