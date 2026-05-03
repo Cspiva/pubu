@@ -350,53 +350,6 @@ function initModalPage() {
   backBtn.addEventListener("click", () => {
     window.location.href = "session.html";
   });
-
-  function forceCardHeights(selector) {
-    const cards = Array.from(document.querySelectorAll(selector));
-    if (cards.length === 0) return;
-
-    const sidePadding = window.innerWidth <= 390
-      ? "17px"
-      : window.innerWidth <= 480
-        ? "18px"
-        : getComputedStyle(document.documentElement).getPropertyValue("--card-inner-gutter").trim();
-    const topPadding = window.innerWidth <= 390 ? 17 : window.innerWidth <= 480 ? 18 : 20;
-    const bottomPadding = window.innerWidth <= 390 ? 22 : window.innerWidth <= 480 ? 24 : 24;
-
-    cards.forEach((card) => {
-      card.style.padding = `${topPadding}px ${sidePadding} ${bottomPadding}px`;
-      card.style.minHeight = "0";
-      card.style.height = "auto";
-
-      const paragraphs = card.querySelectorAll("p");
-      const lastParagraph = paragraphs[paragraphs.length - 1];
-      if (lastParagraph) {
-        lastParagraph.style.marginBottom = "0";
-      }
-
-      const contentBottom = Array.from(card.children).reduce((maxBottom, child) => {
-        return Math.max(maxBottom, child.offsetTop + child.offsetHeight);
-      }, 0);
-
-      card.style.height = `${contentBottom + bottomPadding}px`;
-    });
-  }
-
-  function syncSupportCardHeights() {
-    if (document.body.classList.contains("meditation-body")) {
-      forceCardHeights(".support-sequence-card");
-    }
-
-    if (document.body.classList.contains("tips-body")) {
-      forceCardHeights(".support-story-card");
-    }
-  }
-
-  if (document.body.classList.contains("meditation-body") || document.body.classList.contains("tips-body")) {
-    requestAnimationFrame(syncSupportCardHeights);
-    window.addEventListener("resize", syncSupportCardHeights);
-    window.addEventListener("load", syncSupportCardHeights);
-  }
 }
 
 function initSupportReveal() {

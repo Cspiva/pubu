@@ -905,7 +905,7 @@ h1 {
 .tips-body .support-story-card {
   background: linear-gradient(135deg, #f9ddd2 0%, #f6cec2 100%);
   height: auto !important;
-  min-height: auto !important;
+  min-height: 0 !important;
   padding: 20px var(--card-inner-gutter) 24px !important;
 }
 
@@ -920,7 +920,7 @@ h1 {
 
 .meditation-body .support-sequence-card {
   height: auto !important;
-  min-height: auto !important;
+  min-height: 0 !important;
   padding: 20px var(--card-inner-gutter) 24px !important;
 }
 
@@ -2308,13 +2308,13 @@ h1 {
 
   .tips-body .support-story-card {
     height: auto !important;
-    min-height: 188px !important;
+    min-height: 0 !important;
     padding: 18px 18px 24px !important;
   }
 
   .meditation-body .support-sequence-card {
     height: auto !important;
-    min-height: 188px !important;
+    min-height: 0 !important;
     padding: 18px 18px 24px !important;
   }
 
@@ -2447,13 +2447,13 @@ h1 {
 
   .tips-body .support-story-card {
     height: auto !important;
-    min-height: 176px !important;
+    min-height: 0 !important;
     padding: 17px 17px 22px !important;
   }
 
   .meditation-body .support-sequence-card {
     height: auto !important;
-    min-height: 176px !important;
+    min-height: 0 !important;
     padding: 17px 17px 22px !important;
   }
 
