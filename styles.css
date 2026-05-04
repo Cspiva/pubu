@@ -406,6 +406,41 @@ h1 {
   background: linear-gradient(135deg, #d5f0e3 0%, #c1e8d7 100%);
 }
 
+.tracker-card-cream {
+  background: linear-gradient(135deg, #f6ede6 0%, #f1e7de 100%);
+}
+
+.reflections-card {
+  min-height: 0;
+}
+
+.reflections-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.reflection-item,
+.reflection-empty {
+  margin: 0;
+  color: #243042;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+}
+
+.reflection-item {
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.52);
+}
+
+.reflection-empty {
+  color: #5b6676;
+}
+
 .center-stack {
   display: flex;
   justify-content: center;

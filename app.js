@@ -1,6 +1,7 @@
 const DEFAULT_TIMER_SECONDS = 180;
 const LOSS_COOLDOWN_SECONDS = 60;
 const STATS_KEY = "addiction_breaker_stats";
+const REFLECTIONS_KEY = "urge_reflections";
 const SESSION_GATE_KEY = "ambient_session_allowed";
 const SESSION_STATE_KEY = "ambient_session_state";
 const LOSS_COOLDOWN_KEY = "ambient_loss_cooldown";
@@ -36,6 +37,25 @@ function loadStats() {
 
 function saveStats(stats) {
   localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+}
+
+function loadReflections() {
+  try {
+    const raw = localStorage.getItem(REFLECTIONS_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed.filter((item) => typeof item === "string" && item.trim().length > 0) : [];
+  } catch (_error) {
+    return [];
+  }
+}
+
+function saveReflection(note) {
+  const trimmed = note.trim();
+  if (!trimmed) return;
+  const reflections = loadReflections();
+  reflections.unshift(trimmed);
+  localStorage.setItem(REFLECTIONS_KEY, JSON.stringify(reflections.slice(0, 5)));
 }
 
 function getFallbackMessage() {
@@ -347,6 +367,18 @@ function initInfoPage() {
   document.getElementById("stats-streak").textContent = stats.currentStreak;
   document.getElementById("stats-best").textContent = stats.bestStreak;
   document.getElementById("stats-time").textContent = formatTime(stats.totalUrgeFreeSeconds);
+
+  const reflectionsNode = document.getElementById("stats-reflections");
+  if (reflectionsNode) {
+    const reflections = loadReflections();
+    if (reflections.length === 0) {
+      reflectionsNode.innerHTML = '<p class="reflection-empty">Your recent notes will show up here.</p>';
+    } else {
+      reflectionsNode.innerHTML = reflections
+        .map((reflection) => `<p class="reflection-item">${reflection.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p>`)
+        .join("");
+    }
+  }
 }
 
 function initModalPage() {
@@ -521,6 +553,7 @@ function initLosePage() {
 
   exitBtn.addEventListener("click", () => {
     if (exitBtn.disabled) return;
+    saveReflection(reflectionNode.value);
     sessionStorage.removeItem(LOSS_COOLDOWN_KEY);
     window.location.href = "index.html";
   });
